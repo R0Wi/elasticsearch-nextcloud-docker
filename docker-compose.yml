@@ -1,7 +1,13 @@
 version: '2.2'
 services:
   elasticsearch:
-    image: r0wi/elasticsearch-nextcloud-docker:7.6.0
+    # DOCKER_TAG will be provided by either the (docker hub) environment or inside the .env-file
+    image: r0wi/elasticsearch-nextcloud-docker:${DOCKER_TAG}
+    env_file: .env
+    build: 
+      context: .
+      args:
+        - ELASTIC_IMAGE=elasticsearch:${DOCKER_TAG}
     container_name: elasticsearch_nc
     restart: always
     environment:
@@ -14,6 +20,10 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./data:/usr/share/elasticsearch/data
+      # Use named volume because of permission problems
+      - elasticsearch_data:/usr/share/elasticsearch/data 
     ports:
       - 127.0.0.1:9200:9200
+
+volumes:
+  elasticsearch_data:
