@@ -1,0 +1,7 @@
+version: '2.2'
+services:
+  elasticsearch:
+    build: 
+      context: .
+      args:
+        - ELASTIC_IMAGE=elasticsearch:${DOCKER_TAG}

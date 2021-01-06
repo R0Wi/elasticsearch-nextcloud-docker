@@ -4,4 +4,4 @@
 #   This file is used for docker hub automated builds
 #
 
-docker-compose build elasticsearch
+docker-compose -f docker-compose.yml -f docker-compose-build.yml build elasticsearch

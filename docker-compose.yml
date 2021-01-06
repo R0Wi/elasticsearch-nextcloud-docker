@@ -4,10 +4,6 @@ services:
     # DOCKER_TAG will be provided by either the (docker hub) environment or inside the .env-file
     image: r0wi/elasticsearch-nextcloud-docker:${DOCKER_TAG}
     env_file: .env
-    build: 
-      context: .
-      args:
-        - ELASTIC_IMAGE=elasticsearch:${DOCKER_TAG}
     container_name: elasticsearch_nc
     restart: always
     environment:
