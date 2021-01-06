@@ -1,0 +1,23 @@
+version: '2.2'
+services:
+  elasticsearch:
+    image: elasticsearch-nextcloud:${TAG}
+    build:
+      context: .
+      args:
+        - image=docker.elastic.co/elasticsearch/elasticsearch:${TAG}
+    container_name: elasticsearch_nc
+    restart: always
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./data:/usr/share/elasticsearch/data
+    ports:
+      - 127.0.0.1:9200:9200
