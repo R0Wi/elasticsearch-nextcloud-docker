@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#
+#   This file is used for docker hub automated builds
+#
+
+docker build . --build-arg ELASITC_IMAGE=docker.elastic.co/elasticsearch/elasticsearch:${DOCKER_TAG} -t ${IMAGE_NAME}

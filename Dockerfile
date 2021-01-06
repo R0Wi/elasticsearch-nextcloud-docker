@@ -1,4 +1,4 @@
-ARG image
+ARG ELASITC_IMAGE=docker.elastic.co/elasticsearch/elasticsearch:latest
 
-FROM $image
+FROM $ELASTIC_IMAGE
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch ingest-attachment

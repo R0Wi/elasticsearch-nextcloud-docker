@@ -1,11 +1,7 @@
 version: '2.2'
 services:
   elasticsearch:
-    image: r0wi/elasticsearch-nextcloud-docker:${TAG}
-    build:
-      context: .
-      args:
-        - image=docker.elastic.co/elasticsearch/elasticsearch:${TAG}
+    image: r0wi/elasticsearch-nextcloud-docker:7.6.0
     container_name: elasticsearch_nc
     restart: always
     environment:
