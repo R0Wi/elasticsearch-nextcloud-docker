@@ -7,7 +7,7 @@ Basically all you have to do is to copy the `docker-compose.yml` file, create a 
 **Example:**
 ```bash
 wget https://raw.githubusercontent.com/R0Wi/elasticsearch-nextcloud-docker/master/docker-compose.yml
-echo "DOCKER_TAG=7.6.0 > .env"
+echo "DOCKER_TAG=7.6.0" > .env
 docker-compose up -d
 ```
 
