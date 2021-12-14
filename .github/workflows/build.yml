@@ -1,0 +1,30 @@
+name: build and push
+
+on:
+  workflow_dispatch:
+  release:
+      types: [published]
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  docker-build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          pull: false
+          push: true
+          tags: r0wi/elasticsearch-nextcloud-docker:${{ github.ref_name }}
+          build-args: |
+            ELASTIC_IMAGE=elasticsearch:7.6.0

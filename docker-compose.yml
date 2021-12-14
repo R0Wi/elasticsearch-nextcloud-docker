@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   elasticsearch:
-    # DOCKER_TAG will be provided by either the (docker hub) environment or inside the .env-file
+    # DOCKER_TAG will be provided by the .env-file
     image: r0wi/elasticsearch-nextcloud-docker:${DOCKER_TAG}
     env_file: .env
     container_name: elasticsearch_nc
