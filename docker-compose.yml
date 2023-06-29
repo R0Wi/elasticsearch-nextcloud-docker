@@ -11,7 +11,12 @@ services:
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - discovery.type=single-node
+      # Disable authentication and ssl completely
       - xpack.security.enabled=false
+      # Use this to enable Basic Authentication:
+      # - xpack.security.enabled=true
+      # - xpack.security.http.ssl.enabled=false
+      # - ELASTIC_PASSWORD=mySuperSecret
     ulimits:
       memlock:
         soft: -1
