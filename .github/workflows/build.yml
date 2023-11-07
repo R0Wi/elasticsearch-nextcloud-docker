@@ -27,4 +27,4 @@ jobs:
           push: true
           tags: r0wi/elasticsearch-nextcloud-docker:${{ github.ref_name }}
           build-args: |
-            ELASTIC_IMAGE=elasticsearch:8.6.1
+            ELASTIC_IMAGE=elasticsearch:8.8.2
