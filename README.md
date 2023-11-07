@@ -8,7 +8,7 @@ Basically all you have to do is to copy the `docker-compose.yml` file, create a 
 
 ```bash
 wget https://raw.githubusercontent.com/R0Wi/elasticsearch-nextcloud-docker/master/docker-compose.yml
-echo "DOCKER_TAG=8.6.1" > .env
+echo "DOCKER_TAG=8.8.2" > .env
 docker-compose up -d
 ```
 
@@ -24,7 +24,7 @@ docker run -d \
     -e "discovery.type=single-node" \
     -e "xpack.security.enabled=false" \
     --restart always \
-    r0wi/elasticsearch-nextcloud-docker:8.6.1
+    r0wi/elasticsearch-nextcloud-docker:8.8.2
 ```
 
 If you need additional information, please refer to the official docs:
