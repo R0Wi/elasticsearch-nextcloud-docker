@@ -1,3 +1,8 @@
+# ARCHIVED
+⚠️ This repository has been archived since newer versions of Elasticsearch automatically contain the ingest-attachment plugin. Nevertheless some people might find this useful to get an idea of how to setup Elasticsearch via Docker properly so that it works smoothly together with Nextclouds Full Text Search.
+
+---
+
 # elasticsearch-nextcloud-docker
 A docker container hosting elasticsearch with ingest-attachment plugin enabled (compatible with NC fulltext search)
 
